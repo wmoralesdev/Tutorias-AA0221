@@ -9,6 +9,7 @@ struct node {
     int data;
     node* next;
 };
+// tdef tipoViejo nombreNuevo
 typedef node* list;
 
 template <class TuPrima>
