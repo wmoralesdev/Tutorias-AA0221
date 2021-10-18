@@ -1,0 +1,38 @@
+main()
+    str = "sdkanujdasnasdiaodapoaopsdikopasdoasnmdasdasdnmasnasoas"
+    strArray = str.split(' ')
+
+    strResult = filterWords(strArray)
+
+    heap = maxHeapify(strArray)
+
+getLexOrder(str1, str2)
+    return strcmp(str1, str2)
+
+maxHeapify(array, size, i)
+    largest = i
+    left = 2 * i
+    right = 2 * i + 1
+
+    if (largest < size && getLexOrder(array[left], array[largest])) > 0
+        largest = left
+    if (right < size && getLexOrder(array[right],array[largest])) > 0
+        largest = right
+
+    if (largest != i)
+        swap(array[i], array[largest])
+
+    maxHeapify(array, n, largest)
+
+filterWords(strArray)
+    strResult = []
+
+    for each str in strArray:
+        if !strResult.contains(str)
+            add str to strResult
+
+    return strResult
+
+
+
+

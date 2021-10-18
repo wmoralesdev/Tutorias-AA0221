@@ -1,0 +1,84 @@
+isRational(n)
+    return n == (int)n
+
+getDividedBirds(birds, flag)
+    result = []
+    
+    for each bird in birds
+        if isRational(bird) && flag
+            result.push(bird)
+        else if !isRational(bird) && !flag
+            result.push(bird)
+
+    result
+
+main(birds)
+    // 1. Dividir pajaros entre racionales/irracionales y enteros
+    left = getDividedBirds(birds, true)
+    right = getDividedBirds(birds, false)
+
+    // 2. Ordenar enteros descedentemente
+    left = insertionSort(left)
+
+    // 3. Ordenar racionales/irracionales ascendentemente
+    mergeSort(right)
+
+    // 4. Unir los resultados
+    result = []
+
+    for each bird in left
+        result.push(bird)
+
+    for each bird in right
+        result.push(bird)
+
+    // 5. Retornar resultados
+    return result
+
+
+insertionSort(arr)
+    for i = 1 to arr.lenght
+        j = i
+        while j > 0 && arr[j] > arr[j - 1]
+            swap(arr[j], arr[j - 1])
+            j = j - 1
+    return arr
+
+mergeSort(arr, low, high)
+    if low < high
+        mid = (low + high) / 2
+        mergeSort(arr, low, mid)
+        mergeSort(arr, mid + 1, high)
+
+        merge(arr, low, mid, high)
+
+
+merge(arr, low, mid, high)
+    left = []
+    right = []
+
+    for i = low to mid
+        left.push(arr[i])
+
+    for i = mid + 1 to high
+        right.push(arr[i])
+
+    i = low
+    j = 0
+    k = 0
+
+    while i <= high
+        if j < left.length && k < right.length
+            if left[j] < right[k]
+                arr[i] = left[j]
+                j = j + 1
+            else
+                arr[i] = right[k]
+                k = k + 1
+        else if j < left.length
+            arr[i] = left[j]
+            j = j + 1
+        else if k < right.length
+            arr[i] = right[k]
+            k = k + 1
+        i = i + 1

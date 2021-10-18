@@ -1,0 +1,62 @@
+Rihanna has become a worldwide famous singer and performer, selling a lot of albums to all kinds of people 
+everywhere, a lot of albums, a lot! A LOOOOOOOOOOT!
+
+Excuse me, I was relaying to you the emotions belonging to Rihanna's manager, Mr. Dantallion, the one in 
+actual charge of keeping track of all these sales, and because of the magnitude of the star, this has become 
+very difficult.
+
+Mr. Dantallion is required to perform certain operations and classification over the sales data, and he has 
+fallen behind the schedule, with a deadline approaching closer and closer, so he's on the verge of collapse.
+
+Please help Mr. Dantallion with the following tasks:
+
+Represent the sales of a particular album with a single linked list that will be used as a stack. Each node 
+in the stack must contain a sales amount, and these amounts can have several decimal digits but can also have 
+no decimal digits.
+To label each stack, you need to use the amount of nodes with a number that has exactly three decimal digits 
+and it is on top of a number with no decimal digits. These are weird accounting requirements, so just go along 
+with it.
+These stacks must be stored in an array, and this array has to be sorted in increasing order.
+It is required to use Heapsort to sort the array, using the stack labels as the sort criteria. Heapsort must 
+create MinHeaps for this process.
+As input, the following will be given to you :
+
+A number n, which is the number of Rihanna's albums being sold everywhere.
+n arrays of real numbers, which represent the sales amounts for each album.
+Your answer must:
+
+Be written in C++.
+Include all the code involved, you can't assume you have libraries for the functions you will use, you have to 
+write everything.
+All parameters must be sent by reference, nothing must be sent by value.
+Don't verify anything, you can assume all data is correct and cannot produce errors.
+
+
+1. Una arreglo que cada posicion sera una lista (stack - pila)
+2. Las pilas contendran numeros enteros o racionales/irracionales
+3. Categorizar o nombrar las pilas
+    3.1 Contar los nodos que tienen 3 decimales y su nodo inferior (siguiente) no tenga decimales
+4. Ordenar las pilas por el criterio dado
+
+[                                                                      CAT
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1,      2],     1       1
+    [1, 3.123,  2, 2.123, 4, 4,         3,      1,      2],     1 + 1   2
+    [1, 3.12,   2, 2.123, 4, 4.1234,    3,      1,      2],     1       3
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1,      2],     1       1
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1.123,  2],     1 + 1   2
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1,      2],     1       5
+]
+
+[                                                                      CAT
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1,      2],     1       1
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1,      2],     1       1
+    [1, 3.123,  2, 2.123, 4, 4,         3,      1,      2],     1 + 1   2
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1.123,  2],     1 + 1   2
+    [1, 3.12,   2, 2.123, 4, 4.1234,    3,      1,      2],     1       3
+    [1, 3.12,   2, 2.123, 4, 4,         3,      1,      2],     1       5
+]
+
+swap(pila1, pila2)
+
+1. googlear
+2. convertir el num a string, y contar cuantos caracteres tiene despues del .
