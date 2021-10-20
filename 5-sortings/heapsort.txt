@@ -1,0 +1,45 @@
+fibo(n)
+    if n == 1 || n == 0
+        return 1
+    else
+        return fibo(n-1) + fibo(n-2)
+
+fibo(3) -> 1
+fibo(2) -> 2
+fibo(1) -> 2
+fibo(0) -> 1
+
+fibo(4)
+    fibo(3) + fibo(2)
+
+fibo(3)
+    fibo(2) + fibo(1)
+
+fibo(2)
+    fibo(1) + fibo(0)
+
+// 1. Crear una estructura de datos que reemplace la recursividad (+1)
+// 2. Almacenar los valores en esta estructura
+
+fibo(4)
+
+arr = [ X, X, X, X, X, X]
+
+// 1. Escribir el caso base (llenar la estructura con los valores fijos)
+
+arr = [ 1, 1, 2, 3, 5]
+
+// 2. Recalcular o reprocesar con los valores del caso base
+// Reescribir la recursion como una formula
+
+for i in range(2, n + 1)
+    arr[i] = arr[i - 1] + arr[i - 2]
+
+i = 4
+for i in range(2, n + 1)
+    arr[4] = arr[4 - 1] + arr[4 - 2]
+    arr[4] = arr[3] + arr[2]
+    arr[4] = 3 + 2
+    arr[4] = 5
+
+// 3. Obtener la solucion (el ultimo valor de la estructura)

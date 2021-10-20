@@ -1,0 +1,30 @@
+1. Funcion que recibe el arreglo de entrada y k
+2. Arreglo aux y se llena con 0's
+3. Arreglo de salida (elementos ordenados)
+4. Se recorre el arreglo de entrada
+    4.1 Aumentar en 1 el valor de la posicion del arreglo auxiliar
+5. Se recorre el arreglo aux
+    5.1 Aumentar en 1 el valor de la posicion del arreglo de salida
+6. Se recorre el arreglo de entrada
+    6.1 Desplazo el conteo en la posicion actual, a su posicion ordenada
+    6.2 Desplazar el arreglo aux a la pos siguiente
+7. Retornar el arreglo de salida
+
+countingsort(input, k)
+    count = new Array[k].fill(0)
+    output = new Array[k]
+
+    for i in range(0, input.length)
+      count[input[i]] += 1
+    end
+
+    for i in range(1, k)
+        count[i] += count[i - 1]
+    end
+
+    for i in range(input.length - 1, -1, -1)
+        count[input[i]] -= 1
+        output[count[input[i]] - 1] = input[i]
+    end
+
+    return output
